@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Time </title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* margin-right: 500px; */
+            /* margin-top: 5px; */
+            
+        }
+
+.container{
+    position: fixed;
+    top: 170px;
+    left: 330px;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://cdn.vectorstock.com/i/preview-1x/59/96/ringing-alarm-clock-with-blank-banner-for-text-vector-43415996.webp");
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer{
+    margin-right: 700px;
+    margin-bottom: 300px;
+    font:bolder;
+    font-size: 50px;
+}
+.body{
+    background-image:radial-gradient(rgb(37, 2, 2),hsl(0, 90%, 26%),#ff0000);
+} 
+    </style>
+</head>
+<body class="body">
+    <div class="container">
+    <h1 class="timer"><span id="hr"></span>:<span id="mn"></span>:<span id="sc"></span></h1>
+    <script>
+        let hour =document.getElementById("hr");
+        let min =document.getElementById("mn");
+        let sec =document.getElementById("sc");
+
+
+        function updateTime() {
+            let tm= new Date();
+            let hr= tm.getHours();
+            let mn= tm.getMinutes();
+            let sc= tm.getSeconds();
+            hour.innerHTML=hr;
+            min.innerHTML=mn;
+            sec.innerHTML=sc;
+
+        }
+
+        setInterval(updateTime,1000);
+
+    </script>
+    </div>
+</body>
+</html>
